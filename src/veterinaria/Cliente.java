@@ -8,43 +8,40 @@ package veterinaria;
  *
  * @author Anderson
  */
-public class Cliente {
-    
-    private String identificación;
-    private String nombre;
-    private String telefono;
-    
+public class Cliente extends Persona {
 
-    public Cliente(String identificación, String nombre, String telefono) {
-        this.identificación = identificación;
-        this.nombre = nombre;
+    private String identificacion;
+    private String telefono;
+
+    public Cliente(String identificacion, String nombre, String telefono) {
+        super(nombre);
+        this.identificacion = identificacion;
         this.telefono = telefono;
     }
-    
-    
-    public String getIdentificación() {
-        return identificación;
+
+    public String getIdentificacion() {
+        return identificacion;
     }
 
-    public void setIdentificación(String identificación) {
-        this.identificación = identificación;
+    public void setIdentificacion(String identificacion) {
+        if (identificacion == null || identificacion.trim().equals("")) {
+            System.out.println("La identificación no es valida");
+        } else {
+            this.identificacion = identificacion;
+        }
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getTelefono() {
         return telefono;
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        if (telefono == null || telefono.trim().equals("")) {
+            System.out.println("El telefono no es valido");
+        } else {
+            this.telefono = telefono;
+        }
     }
-    
-    
+
 }
