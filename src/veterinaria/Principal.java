@@ -17,6 +17,29 @@ public class Principal {
         mascota1.mostrarResumen();
         System.out.println("Dueno: " + mascota1.getDuenio().getNombre());
         mascota2.mostrarResumen();
-
+        
+        Veterinario veterinario1 = new Veterinario("V0001", "Medicina General", "Dra Shirley Cruz");
+        
+        Consulta consulta1 = new Consulta(
+                "5/10/2026", 
+                "Control General", 
+                mascota2, 
+                15000,
+                veterinario1);
+        
+        System.out.println("==========================");
+        consulta1.mostrarResumen();
+        consulta1.actualizarCosto(17500);
+        System.out.println("==========================");
+        consulta1.mostrarResumen();
+        consulta1.actualizarCosto(18000, "Control y medicamento");
+        System.out.println("==========================");
+        consulta1.mostrarResumen();
+        
+        Cliente cliente2 = new Cliente("222222222222", "Carlos Mora", "888888888");
+        Persona personaReferencia = cliente2;
+        
+        System.out.println(cliente2.getNombre());
+        System.out.println(personaReferencia.getNombre());
     }
 }
